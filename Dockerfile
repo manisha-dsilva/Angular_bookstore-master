@@ -6,7 +6,6 @@ WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
-ENV NODE_EXTRA_CA_CERTS="/var/jenkins_home/tools/hudson.model.JDK/jdk/jre/lib/security/jssecacerts"
 
 # install and cache app dependencies
 COPY package.json /app/package.json
