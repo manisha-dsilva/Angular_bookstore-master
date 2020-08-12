@@ -2,7 +2,7 @@ version: '3'
 services:
      maven:
          image: "manishadsilva/$IMAGE:$BUILD_TAG"
-         container_name: deployed
+         container_name: frontend
          ports:
               - "4200:4200"
          networks:
