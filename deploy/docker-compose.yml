@@ -3,4 +3,10 @@ services:
      maven:
          image: "manishadsilva/$IMAGE:$BUILD_TAG"
          container_name: deployed
+         ports:
+              - "4200:4200"
+         networks:
+              - net 
+networks:
+        net:
 
