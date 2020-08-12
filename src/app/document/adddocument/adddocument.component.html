@@ -1,0 +1,44 @@
+<div class="container"  *ngIf="showMsg">
+  <p class="alert alert-success">
+      <strong>Document added successfully!</strong>
+  </p>
+</div>
+
+<div class="container">
+  <h4>Add New Documents</h4>
+  <div class="row">
+  
+  <div class="col-8 col-dark">
+  <div class="form-group-row">
+  <label class="col-3 col-form-label"> Document Name: </label>
+    <input class="col-4" [(ngModel)] ="document.documentName" required/>
+  </div>
+
+  <div class="form-group-row">
+      <label  class="col-3 col-form-label"> Document Link: </label>
+        <input  class="col-4" [(ngModel)] ="document.link" required/>
+      </div>
+      
+        <div class="form-group-row">
+          <label  class="col-3 col-form-label">Type</label>
+          <select class="col-4" [(ngModel)] ="document.categoryName">
+            <option disabled>Select Type</option>
+            <option>Jenkins</option>
+            <option>Devops</option>
+            <option>Aws</option>
+            <option>Linux</option>
+            <option>Scripting</option>
+            <option>Java</option>
+            <option>Maven</option>
+            <option>Others</option>
+          </select>
+        </div>       
+  
+  <div class="form-group-row">
+  <button type="submit" class="btn btn-primary col-2" (click) = "addDocument()" >Save</button>
+  </div>
+  
+  </div>
+  
+  </div>
+  </div>

@@ -1,0 +1,50 @@
+<div class="container">
+  <table>
+    <td>
+      <a class="btn btn-primary" routerLink="/addbook" (click)="addBook()">Add new book</a>
+    </td>
+    <td >
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search for Book" aria-label="Search" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary"  (click)="searchBook()" type="button" id="button-addon2">Submit</button>
+        </div>
+      </div>
+    </td>
+  </table>
+</div>
+  <div class="container">
+<div class = "row">
+<div class="col-6">
+  <h4>All Types of Books</h4> 
+</div>
+  <table class="table table-bordered table-dark">
+    <tr>
+      <th>
+        Book Name
+      </th>
+      <th scope="col-3">
+        Author
+      </th>
+      <th scope="col-3">
+        Type
+      </th>
+      <th scope="col-3">
+        Reference Guide
+      </th>
+    </tr>
+
+    <tr *ngFor="let book of books | paginate: { itemsPerPage: count, currentPage: p }" (click) = onSelect(book)>
+      <td>{{book.bookName}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.categoryName}}</td>
+      <td><a href="{{book.link}}">Click Here</a></td>
+    </tr>
+  </table>
+</div>
+
+<!--Including the pagination control.-->
+<div class="text-right">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
